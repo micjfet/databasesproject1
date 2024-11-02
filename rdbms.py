@@ -425,7 +425,7 @@ def normalize_tables(tables, form_choice, di_tuples, attributeindex):
                         #remove the dependency from the original table
                         data['left_fds'].remove(left)
                         data['right_fds'].remove(right)
-                        #remove the non-prime attributes from the original table
+                        #remove the right attributes from the original table
                         data['cand_keys'] = [key for key in data['cand_keys'] if not set(right).intersection(set(key))]
 
             #if there are still FDs left, keep them in the original table
