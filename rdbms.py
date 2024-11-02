@@ -2,7 +2,6 @@ from collections import Counter
 from itertools import combinations
 from itertools import product
 #Michael Fetter, RDBMS normalizer for CS5300
-#make it so that if 1nf in a fd, it decomposes based on the fd instead of primary key - maybe
 
 #main function to gather necessary inputs, call normalization process, and output normalized tables
 def input_parser():
