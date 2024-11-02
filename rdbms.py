@@ -231,7 +231,8 @@ def input_parser():
             #retrieve and display relevant data
             relevant_data = get_connected_data(attributeindex, data_instance_tuples, data['attributes'])
             printed_pieces = set()  # Set to track unique data pieces
-            print("Data Instances:")
+            if relevant_data:
+                print("Data Instances:")
             for data_piece in relevant_data:
                 if data_piece not in printed_pieces:
                     print("  " + str(data_piece))
@@ -435,8 +436,8 @@ def normalize_tables(tables, form_choice, di_tuples, attributeindex):
                 tables[table]['left_fds'] = []
                 tables[table]['right_fds'] = []
                 
-    #replace previous tables with updated BCNF normalized tables if needed
-    tables.update(new_tables)        
+        #replace previous tables with updated BCNF normalized tables if needed
+        tables.update(new_tables)        
 
     #begin 4NF normalization if selected by user
     for table, data in list(tables.items()):
